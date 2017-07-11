@@ -23,32 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="temp.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/temp.js">
+      <file leaf-file-name="Image Processing.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Image Processing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Decode the Morse code.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Decode the Morse code.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="108" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Decode the Morse code, for real.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Decode the Morse code, for real.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="210">
+              <caret line="16" column="21" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="21" />
+              <folding>
+                <element signature="n#!!doc;n#multiplyArray#0" expanded="false" />
+                <marker date="1499804487624" expanded="true" signature="34152:34249" ph="..." />
+                <marker date="1499804487624" expanded="false" signature="34294:34307" ph="..." />
+                <marker date="1499804487624" expanded="true" signature="34323:34376" ph="..." />
+                <marker date="1499804487624" expanded="true" signature="34389:34925" ph="..." />
+                <marker date="1499804487624" expanded="true" signature="34415:34870" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,6 +63,7 @@
         <option value="$PROJECT_DIR$/temp.js" />
         <option value="$PROJECT_DIR$/Decode the Morse code.js" />
         <option value="$PROJECT_DIR$/Decode the Morse code, for real.js" />
+        <option value="$PROJECT_DIR$/Image Processing.js" />
       </list>
     </option>
   </component>
@@ -149,6 +137,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -158,10 +147,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Decode the Morse code, for real.js">
-    <configuration default="false" name="Battle ships: Sunk damaged or not touched?.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="Battle ships: Sunk damaged or not touched?.js" working-dir="$PROJECT_DIR$">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Node.js.Image Processing.js">
     <configuration default="false" name="Did you mean ...?.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="Did you mean ...?.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
@@ -176,6 +162,9 @@
       <method />
     </configuration>
     <configuration default="false" name="Decode the Morse code, for real.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="Decode the Morse code, for real.js" working-dir="$PROJECT_DIR$">
+      <method />
+    </configuration>
+    <configuration default="false" name="Image Processing.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="Image Processing.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -232,19 +221,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.Battle ships: Sunk damaged or not touched?.js" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.Did you mean ...?.js" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.Big Arithmetic - integer add" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.temp.js" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.Decode the Morse code, for real.js" />
+      <item index="0" class="java.lang.String" itemvalue="Node.js.Did you mean ...?.js" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.Big Arithmetic - integer add" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.temp.js" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.Decode the Morse code, for real.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.Image Processing.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.Decode the Morse code, for real.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.temp.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.Big Arithmetic - integer add" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.Did you mean ...?.js" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.Battle ships: Sunk damaged or not touched?.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.Image Processing.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.Decode the Morse code, for real.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.temp.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.Big Arithmetic - integer add" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.Did you mean ...?.js" />
       </list>
     </recent_temporary>
   </component>
@@ -263,12 +252,12 @@
       <updated>1499140872686</updated>
       <workItem from="1499140873877" duration="21886000" />
       <workItem from="1499280459733" duration="101000" />
-      <workItem from="1499354951185" duration="65417000" />
+      <workItem from="1499354951185" duration="84913000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87404000" />
+    <option name="totallyTimeSpent" value="106900000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
@@ -279,11 +268,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26595744" sideWeight="0.50184697" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26595744" sideWeight="0.49815303" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26595744" sideWeight="0.49815303" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960423" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41170213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40851063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -392,12 +381,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Decode the Morse code, for real.js</url>
-          <line>23</line>
+          <line>99</line>
           <properties />
-          <option name="timeStamp" value="151" />
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Image Processing.js</url>
+          <line>137</line>
+          <properties />
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Image Processing.js</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="198" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="170" />
+      <option name="time" value="199" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -522,9 +523,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Decode the Morse code, for real.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+        <state relative-caret-position="379">
+          <caret line="94" column="5" selection-start-line="87" selection-start-column="4" selection-end-line="94" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Image Processing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc;n#multiplyArray#0" expanded="false" />
+            <marker date="1499804487624" expanded="true" signature="34152:34249" ph="..." />
+            <marker date="1499804487624" expanded="false" signature="34294:34307" ph="..." />
+            <marker date="1499804487624" expanded="true" signature="34323:34376" ph="..." />
+            <marker date="1499804487624" expanded="true" signature="34389:34925" ph="..." />
+            <marker date="1499804487624" expanded="true" signature="34415:34870" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
