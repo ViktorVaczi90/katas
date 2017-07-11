@@ -46,11 +46,9 @@
       <file leaf-file-name="Decode the Morse code, for real.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Decode the Morse code, for real.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
-              <folding>
-                <element signature="e#3073#3259#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -265,12 +263,12 @@
       <updated>1499140872686</updated>
       <workItem from="1499140873877" duration="21886000" />
       <workItem from="1499280459733" duration="101000" />
-      <workItem from="1499354951185" duration="56812000" />
+      <workItem from="1499354951185" duration="65417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78799000" />
+    <option name="totallyTimeSpent" value="87404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
@@ -394,18 +392,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Decode the Morse code, for real.js</url>
-          <line>81</line>
+          <line>23</line>
           <properties />
-          <option name="timeStamp" value="132" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Decode the Morse code, for real.js</url>
-          <line>74</line>
-          <properties />
-          <option name="timeStamp" value="148" />
+          <option name="timeStamp" value="151" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="149" />
+      <option name="time" value="170" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -530,11 +522,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Decode the Morse code, for real.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
-          <folding>
-            <element signature="e#3073#3259#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
