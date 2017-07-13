@@ -1,5 +1,5 @@
 var query = function() {
-  return{data: [], propety: i=>i, filter: i=>true, group: undefined, order: undefined,
+  return{data: [], propety: i=>i, filter: [i=>true], group: undefined, order: undefined, hFilter:[i=>true],
     error:false,
     select, from, where, orderBy, groupBy, having, execute}
 };
@@ -22,13 +22,17 @@ function groupData(groupingFunctions = [], data){
     :groupedData
 }
 function select(propety)      {return Object.assign({},this,{propety: propety?propety:this.propety, select:   generateErrorFunction.bind(this)('Duplicate SELECT')})}
-function from(data)           {return Object.assign({},this,{data,                                  from:     generateErrorFunction.bind(this)('Duplicate FROM')})}
-function where(filter)        {return Object.assign({},this,{filter: filter?filter:this.filter,     where:    generateErrorFunction.bind(this)('Duplicate WHERE')})}
+function from(...data)        {return Object.assign({},this,{data: data.length>1?data:data[0],      from:     generateErrorFunction.bind(this)('Duplicate FROM')})}
+function where(...filter)     {return Object.assign({},this,{filter: filter?filter:this.filter,     where:    generateErrorFunction.bind(this)('Duplicate WHERE')})}
 function orderBy(order)       {return Object.assign({},this,{order: order?order:this.order,         orderBy:  generateErrorFunction.bind(this)('Duplicate ORDERBY')})}
 function groupBy(...group)    {return Object.assign({},this,{group: group?group:this.group,         groupBy:  generateErrorFunction.bind(this)('Duplicate GROUPBY')})}
-function having(expression)   {return Object.assign({},this,{expression,                            having:   generateErrorFunction.bind(this)('Duplicate HAVING')})}
+function having(hFilter)      {return Object.assign({},this,{hFilter: hFilter?this.hFilter.concat(hFilter):this.hFilter})}
+
 function execute(){
-  const retVal = groupData(this.group,this.data.filter(this.filter))
+  const retVal = groupData(this.group,
+    this.data
+      .filter(i=>this.filter.map(f=>f(i)).reduce((acc,curr)=>acc || curr )))
+    .filter(i=>this.hFilter.map(f=>f(i)).reduce((acc,curr)=>acc && curr ))
     .map(this.propety)
     return this.order?retVal.sort(this.order):retVal}
 
@@ -59,11 +63,25 @@ function naturalCompare(value1, value2) {
     return 0;
   }
 }
-let retval = query()
-//retval = retval.select(profession)
-//retval = retval.select(profession)
-retval = retval.from(persons)
-//retval = retval.where(isTeacher)
-retval = retval.groupBy(profession, name).orderBy(naturalCompare)
-retval = retval.execute()
-console.log(retval)
+function id(value) {
+  return value;
+}
+function greatThan1(group) {
+  return group[1].length > 1;
+}
+
+function isPair(group) {
+  return group[0] % 2 === 0;
+}
+function frequency(group) {
+  return { value: group[0], frequency: group[1].length };
+}
+var numbers = [1, 2, 1, 3, 5, 6, 1, 2, 5, 6];
+// let retval = query()
+// //retval = retval.select(profession)
+// //retval = retval.select(profession)
+// retval = retval.from(persons)
+// //retval = retval.where(isTeacher)
+// retval = retval.groupBy(profession, name).orderBy(naturalCompare)
+// retval = retval.execute()
+console.log(query().select(frequency).from(numbers).groupBy(id).having(greatThan1).having(isPair).execute())
