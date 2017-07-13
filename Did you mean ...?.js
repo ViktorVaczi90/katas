@@ -37,8 +37,5 @@ function wordDistance(firstWord,secondWord){
 }
 Dictionary.prototype.findMostSimilar = function(term) {
   let distances = this.words.map(item=>wordDistanceFast(term,item))
-  console.log({distances})
   return this.words[distances.indexOf(distances.reduce((acc,curr)=>curr<acc?curr:acc))]
 }
-fruits = new Dictionary(['cherry', 'pineapple', 'melon', 'strawberry', 'raspberry']);
-console.log(fruits.findMostSimilar('strawbery'))

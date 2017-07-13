@@ -26,4 +26,3 @@ function zeroes(base, number) {
   //console.log(basePrimeNumbers,basePrimes)
 
 }
-console.log(zeroes(16, 16))
