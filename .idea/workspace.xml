@@ -29,8 +29,8 @@
       <file leaf-file-name="Functional SQL.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Functional SQL.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="94" selection-start-line="25" selection-start-column="94" selection-end-line="25" selection-end-column="94" />
+            <state relative-caret-position="270">
+              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -236,7 +236,7 @@
       <workItem from="1499140873877" duration="21886000" />
       <workItem from="1499280459733" duration="101000" />
       <workItem from="1499354951185" duration="86066000" />
-      <workItem from="1499958427825" duration="9894000" />
+      <workItem from="1499958427825" duration="13476000" />
     </task>
     <task id="LOCAL-00001" summary="added Functional SQL">
       <created>1499959143497</created>
@@ -259,11 +259,25 @@
       <option name="project" value="LOCAL" />
       <updated>1499967111860</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Almost done">
+      <created>1499969257955</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1499969257955</updated>
+    </task>
+    <task id="LOCAL-00005" summary="OR/AND filter fix and done">
+      <created>1499970986949</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1499970986950</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117947000" />
+    <option name="totallyTimeSpent" value="121529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
@@ -302,7 +316,9 @@
     <MESSAGE value="added Functional SQL" />
     <MESSAGE value="before recursive grouping function" />
     <MESSAGE value="Grouping OK" />
-    <option name="LAST_COMMIT_MESSAGE" value="Grouping OK" />
+    <MESSAGE value="Almost done" />
+    <MESSAGE value="OR/AND filter fix and done" />
+    <option name="LAST_COMMIT_MESSAGE" value="OR/AND filter fix and done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -389,24 +405,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Functional SQL.js</url>
-          <line>79</line>
-          <properties />
-          <option name="timeStamp" value="200" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Functional SQL.js</url>
           <line>13</line>
           <properties />
           <option name="timeStamp" value="207" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Functional SQL.js</url>
-          <line>31</line>
-          <properties />
-          <option name="timeStamp" value="208" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="209" />
+      <option name="time" value="214" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -551,8 +555,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Functional SQL.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="94" selection-start-line="25" selection-start-column="94" selection-end-line="25" selection-end-column="94" />
+        <state relative-caret-position="270">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
           <folding />
         </state>
       </provider>

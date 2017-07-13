@@ -1,5 +1,5 @@
 var query = function() {
-  return{data: [], propety: i=>i, filter: [], group: undefined, order: undefined, hFilter:[i=>true],
+  return{data: [], propety: i=>i, wFilter: [[i=>true]], group: undefined, order: undefined, hFilter:[[i=>true]],
     error:false,
     select, from, where, orderBy, groupBy, having, execute}
 };
@@ -25,16 +25,16 @@ function select(propety)      {return Object.assign({},this,{propety: propety?pr
 function from(...data)        {return Object.assign({},this,{data: data.length>1
   ? data[0].map(i=>data[1].map(ii=>[i,ii])).reduce((acc,curr)=>acc.concat(curr),[])
   :data[0],                                                                                         from:     generateErrorFunction.bind(this)('Duplicate FROM')})}
-function where(...filter)     {return Object.assign({},this,{filter: this.filter.concat(...filter)})}
+function where(...wFilter)     {return Object.assign({},this,{wFilter: this.wFilter.concat([wFilter])})}
 function orderBy(order)       {return Object.assign({},this,{order: order?order:this.order,         orderBy:  generateErrorFunction.bind(this)('Duplicate ORDERBY')})}
 function groupBy(...group)    {return Object.assign({},this,{group: group?group:this.group,         groupBy:  generateErrorFunction.bind(this)('Duplicate GROUPBY')})}
-function having(hFilter)      {return Object.assign({},this,{hFilter: hFilter?this.hFilter.concat(hFilter):this.hFilter})}
+function having(...hFilter)      {return Object.assign({},this,{hFilter: this.hFilter.concat([hFilter])})}
 
 function execute(){
   const retVal = groupData(this.group,
     this.data
-      .filter(i=>this.filter.length?this.filter.map(f=>f(i)).reduce((acc,curr)=>acc || curr ):true))
-    .filter(i=>this.hFilter.map(f=>f(i)).reduce((acc,curr)=>acc && curr ))
+      .filter(i=>this.wFilter.reduce((andAcc,orFilters)=>andAcc && orFilters.reduce((acc,curr)=>curr(i) || acc,false),true)))
+    .filter(i=>this.hFilter.reduce((andAcc,orFilters)=>andAcc && orFilters.reduce((acc,curr)=>curr(i) || acc,false),true))
     .map(this.propety)
     return this.order?retVal.sort(this.order):retVal}
 
