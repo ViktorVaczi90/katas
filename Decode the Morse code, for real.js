@@ -1,8 +1,6 @@
 /**
  * Created by v on 7/10/17.
  */
-const DEBUG = false
-const debugLog = DEBUG?console.log.bind(console):()=>{}
 
 const beeplengths = [".", "-"]
 const pauseLengths = ["", " ", "   "]
@@ -16,20 +14,16 @@ const closestClusterIndex = (observation, clusterMeans) => {
 
 const spread = (means, observations)=> {
 
-  const retval = observations.reduce((acc, observation)=> {
+  return observations.reduce((acc, observation)=> {
     //console.log({means,observation,closestMean:means[closestClusterIndex(observation,means)],add: Math.abs(means[closestClusterIndex(observation,means)]-observation)})
     return acc + Math.pow(means[closestClusterIndex(observation, means)] - observation,2)
   }, 0)
-  if(!retval)
-    debugLog('wtf')
-  return retval
 }
 
 
 const KMeansCluster = (observations, numberOfClusters, lengths, maxLength) => {
   const maxObsLength = maxLength > 7 ? maxLength : 7
   let means = Array.from(Array(numberOfClusters)).map((item, index)=>lengths[index] * maxObsLength / 7); // This has to more clever!!!
-  //console.log({ means })
   let membersArray = Array.from(Array(numberOfClusters)).map(i=>[])
   let newMembersArray = Array.from(Array(numberOfClusters)).map(i=>[])
   let previousMeans = [];
@@ -51,36 +45,17 @@ const KMeansCluster = (observations, numberOfClusters, lengths, maxLength) => {
             closestClusterIndex(observation, means)
             === clusterIndex ? acc.concat([observation]) : acc
           , []))// Filter observations where the closest mean is the current one.
-    //console.log({membersArray, newMembersArray})
   } while (!newMembersArray.reduce((acc, newMembers, meanIndex) => acc && newMembers
       .reduce((memberAcc, member, memberIndex)=>memberAcc && (membersArray[meanIndex][memberIndex] !== undefined && membersArray[meanIndex][memberIndex] === member), true)
     , true))
-  debugLog({ previousMeans, turns, means,spread: spread(means,observations) })
-  debugLog('\n')
   return previousMeans
 }
 const decodeBitsAdvanced = (bits) => {
-  //console.log({bits})
   if (!bits || !bits.replace(/^0+/, '')) return ''
   let observations = bits.replace(/^0+/, '').replace(/0+$/, '').match(/0+|1+/g)
   let maximalObservationLengts = Math.max(...observations.map(o=>o.length))
   let minimalObservationLengts = Math.min(...observations.map(o=>o.length))
   const obsLengt = maximalObservationLengts
-  while(observations.filter(o=>o.length < (maximalObservationLengts/(7*3))&&o[0]=='0' ).length){
-    console.log(observations.length)
-    observations = observations.reduce((acc,curr,index,arr)=>{
-      if(arr[index-1] ==  arr[index+1] && curr.length< (maximalObservationLengts/(7*3))&& curr[0]=='0'){
-        if(arr[index-1][0] != arr[index+1][0])
-        console.log({curr,index,
-          left: arr[index - 1],
-          right: arr[index + 1],
-          res: Array.from(Array(curr.length)).fill(arr[index-1].length > arr[index+1].length?arr[index-1][0]:arr[index-1][0]).join('')})
-        return acc.concat(Array.from(Array(curr.length)).fill(arr[index-1].length > arr[index+1].length?arr[index-1][0]:arr[index-1][1]).join(''))
-      }
-      return acc.concat([curr])
-    },[]).join('').match(/0+|1+/g)
-    break;
-  }
   maximalObservationLengts = Math.max(...observations.map(o=>o.length))
   minimalObservationLengts = Math.min(...observations.map(o=>o.length))
   console.log({end:observations.length})
@@ -96,7 +71,7 @@ const decodeBitsAdvanced = (bits) => {
       spread(curr, observations.map(i=>i.length))
       < spread(acc, observations.map(i=>i.length))
         ? curr : acc)
-  //console.log({bestMeans:means})
+    .map((i,index,arr)=>i+Math.floor(arr[0]/3))
   return observations.map(observation => observation[0] == 1
     ? beeplengths[closestClusterIndex(observation.length, means.slice(0,2))]
     : pauseLengths[closestClusterIndex(observation.length, means)]).join("").trim()
