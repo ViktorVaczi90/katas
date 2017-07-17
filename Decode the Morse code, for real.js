@@ -50,7 +50,7 @@ const KMeansCluster = (observations, numberOfClusters, lengths, maxLength) => {
     , true))
   return previousMeans
 }
-const decodeBitsAdvanced = (bits) => {
+const decodeBits = (bits) => {
   if (!bits || !bits.replace(/^0+/, '')) return ''
   let observations = bits.replace(/^0+/, '').replace(/0+$/, '').match(/0+|1+/g)
   let maximalObservationLengts = Math.max(...observations.map(o=>o.length))
