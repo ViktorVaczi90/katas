@@ -1,7 +1,7 @@
 /**
  * Created by v on 7/4/17.
  */
-const heightPermutations = permutator([1, 2, 3, 4, 5, 6])
+const heightPermutations = permutator([1, 2, 3, 4, 5, 6,7])
 let solveRowt = 0;
 const solveRow = (clue, possibleHeights) =>{
   if (!clue) return possibleHeights;
@@ -11,7 +11,7 @@ const solveRow = (clue, possibleHeights) =>{
     .filter(arr=> rowClue(arr) === clue) // Filter with right clue
     .reduce((acc, currArr)=> {
       return acc.map((item, idx)=>item.add(currArr[idx]))
-    }, Array.from(Array(6)).map(i=>new Set()))
+    }, Array.from(Array(7)).map(i=>new Set()))
     .map(item=>Array.from(item).sort());// Merge solutions
 
 };
@@ -20,6 +20,11 @@ return puzzle.reduce((acc, row)=> acc &&
     row.reduce((acc, item) => acc && item.length === 1, true)
     , true)
 };
+const puzzleFailed = (puzzle) =>{
+  return puzzle.reduce((acc, row)=> acc ||
+    row.reduce((acc, item) => acc || item.length === 0, false)
+    , false)
+}
 const rowClue = (heights) => {
   let currentMax = 0;
   let clue = 0;
@@ -55,27 +60,28 @@ const getRowFromPuzzleByClueIndex = (clueIndex, puzzle) => { // Gets row from pu
   let column;
   let deltaRow = 0;
   let deltaColumn = 0;
-  if (clueIndex < 6) {
+  if (clueIndex < 7) {
     column = clueIndex;
     row = 0;
     deltaRow = 1
   }
-  else if (clueIndex < 12) {
-    column = 5;
-    row = clueIndex - 6;
+  else if (clueIndex < 14) {
+    column = 6;
+    row = clueIndex - 7;
     deltaColumn = -1
   }
-  else if (clueIndex < 18) {
-    column = 17 - clueIndex;
-    row = 5;
+  else if (clueIndex < 21) {
+    column = 20 - clueIndex;
+    row = 6;
     deltaRow = -1
   }
   else {
     column = 0;
-    row = 23 - clueIndex;
+    row = 27 - clueIndex;
     deltaColumn = 1;
   }
-  for (let i = 0; i < 6; i++) {
+  //console.log({row,column,deltaRow,deltaColumn,clueIndex})
+  for (let i = 0; i < 7; i++) {
     retval.push(puzzle[row][column].slice())
     row += deltaRow;
     column += deltaColumn;
@@ -88,27 +94,27 @@ const mergeSolutionBackToPuzzle = (clueIndex, solution, puzzle) => { // Gives ba
   let column;
   let deltaRow = 0;
   let deltaColumn = 0;
-  if (clueIndex < 6) {
+  if (clueIndex < 7) {
     column = clueIndex;
     row = 0;
     deltaRow = 1
   }
-  else if (clueIndex < 12) {
-    column = 5;
-    row = clueIndex - 6;
+  else if (clueIndex < 14) {
+    column = 6;
+    row = clueIndex - 7;
     deltaColumn = -1
   }
-  else if (clueIndex < 18) {
-    column = 17 - clueIndex;
-    row = 5;
+  else if (clueIndex < 21) {
+    column = 20 - clueIndex;
+    row = 6;
     deltaRow = -1
   }
   else {
     column = 0;
-    row = 23 - clueIndex;
+    row = 27 - clueIndex;
     deltaColumn = 1;
   }
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 7; i++) {
     retPuzzle[row][column] = retPuzzle[row][column].filter(item => solution[i].includes(item));
     row += deltaRow;
     column += deltaColumn;
@@ -125,10 +131,19 @@ const updateClue = (row) =>{
   }
   return 0;
 }
-const solvePuzzle = (clues) => {
-  const row = Array.from(Array(6)).map(i=>[1, 2, 3, 4, 5, 6])
-  let puzzle = Array.from(Array(6)).map(i=>row.slice());
+const solvePuzzle = (clues,puzzle) => {
+
+  const row = Array.from(Array(7)).map(i=>[1, 2, 3, 4, 5, 6, 7])
+  puzzle = puzzle?puzzle:Array.from(Array(7)).map(i=>row.slice());
+  let lastTries = 0;
+  let tries = 0;
   while (!puzzleReady(puzzle)) {
+    tries = puzzleTriesLeft(puzzle);
+    if(tries === lastTries){
+      console.log({tries:puzzleTriesLeft(puzzle),clues})
+      console.log(puzzleToString(puzzle))
+    }
+    lastTries = tries
     clues.forEach((clue, clueIdx)=> {
       let currentRow = getRowFromPuzzleByClueIndex(clueIdx, puzzle);
       if (!clue){
@@ -138,12 +153,13 @@ const solvePuzzle = (clues) => {
       puzzle = mergeSolutionBackToPuzzle(clueIdx, solution, puzzle)
     })
   }
-  return puzzle.map(row=>row.map(col=>col[0]));
+  return ({clues,puzzle})
+  //return puzzle.map(row=>row.map(col=>col[0]));
 }
 const puzzleTriesLeft = (puzzle)=>
 puzzle.reduce((acc,row)=>acc+= row
     .reduce((a,col)=>a+col.length,0)
-  ,0) -36
+  ,0) -49
 const puzzleToStr = (puzzle)=>{
   let retval = "";
   puzzle.forEach(row=>{
@@ -154,7 +170,11 @@ const puzzleToStr = (puzzle)=>{
   })
   return retval
 }
-console.log(solvePuzzle([ 0, 0, 0, 2, 2, 0,
-  0, 0, 0, 6, 3, 0,
-  0, 4, 0, 0, 0, 0,
-  4, 4, 0, 3, 0, 0]))
+const puzzleToString = (puzzle) =>
+{
+  return puzzle.map(row=>row.map(item=>item.toString()+ '\t')).join('\n');
+}
+console.log(solvePuzzle([0,2,3,0,2,0,0,
+  5,0,4,5,0,4,0,
+  0,4,2,0,0,0,6,
+  0,0,0,0,0,0,0]))
