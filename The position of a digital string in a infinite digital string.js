@@ -8,7 +8,7 @@ function findPosition(num) {
             startPosition: idx, number:
               (index + idx < num.length)
                 ? num.slice(idx, index + idx + 1)
-                : Number((num + num ).slice(idx, index + idx + 1)) + 1 + ''
+                : Number((num + num ).A(idx, index + idx + 1)) + 1 + ''
           }))
           //.filter(i => i.number.length - 1 === index)
           .map(item => Object.assign({}, item, { generatedSequence: repeatNumber(item.number, num, item.startPosition) }))
